@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معي - شكرا لزيارتك</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* تنسيقات خاصة لصفحة التواصل لضمان أن العناصر تظهر بشكل صحيح مع الخلفية */
+        .contact-container {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInContent 1.5s forwards 0.8s ease-out;
+            color: var(--text-color-light); /* لضمان لون النص الصحيح */
+        }
+
+        .contact-container h1 {
+            font-size: 3.5em;
+            color: var(--accent-color-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(169, 174, 93, 0.7);
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .contact-container p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-family: 'Playpen Sans', sans-serif;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            margin-top: 30px;
+            line-height: 1.8;
+            font-family: 'Playpen Sans', sans-serif;
+        }
+
+        .contact-info a {
+            color: var(--accent-color-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* زر العودة للصفحة الرئيسية */
+        .back-button {
+            margin-top: 50px;
+            background-color: var(--button-bg-color);
+            color: var(--text-color-light);
+            padding: 15px 30px;
+            font-size: 1.4em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-decoration: none; /* مهم للروابط */
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button:hover {
+            background-color: var(--button-hover-bg-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .back-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        }
+        .back-button i {
+            font-size: 0.9em;
+        }
+
+        /* Media queries for responsiveness for contact page */
+        @media (max-width: 768px) {
+            .contact-container h1 {
+                font-size: 2.8em;
+            }
+            .contact-container p {
+                font-size: 1.2em;
+            }
+            .contact-info {
+                font-size: 1em;
+            }
+            .back-button {
+                font-size: 1.2em;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container h1 {
+                font-size: 2em;
+            }
+            .contact-container p {
+                font-size: 1em;
+            }
+            .contact-info {
+                font-size: 0.9em;
+            }
+            .back-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars-layer">
+        <i class="fa-solid fa-star star" style="--size: 0.7em; --top: 5%; --left: 10%; --delay: 0.1s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.1em; --top: 15%; --left: 85%; --delay: 1.2s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.6em; --top: 25%; --left: 30%; --delay: 2.3s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.0em; --top: 35%; --left: 5%; --delay: 3.4s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.3em; --top: 45%; --left: 60%; --delay: 0.5s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.8em; --top: 55%; --left: 20%; --delay: 1.6s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.0em; --top: 65%; --left: 75%; --delay: 2.7s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.7em; --top: 75%; --left: 40%; --delay: 3.8s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.2em; --top: 85%; --left: 90%; --delay: 0.9s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.6em; --top: 5%; --left: 70%; --delay: 1.0s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.1em; --top: 20%; left: 45%; --delay: 2.1s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.9em; --top: 30%; --left: 95%; --delay: 3.2s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.4em; --top: 40%; --left: 15%; --delay: 0.3s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.7em; --top: 50%; --left: 80%; --delay: 1.4s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.0em; --top: 60%; --left: 35%; --delay: 2.5s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.3em; --top: 70%; --left: 55%; --delay: 3.6s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.8em; --top: 80%; --left: 25%; --delay: 0.7s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.1em; --top: 90%; --left: 70%; --delay: 1.8s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.2em; --top: 25%; --left: 5%; --delay: 0.2s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.9em; --top: 40%; --left: 75%; --delay: 1.3s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 0.7em; --top: 55%; --left: 10%; --delay: 2.4s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.0em; --top: 60%; --left: 90%; --delay: 3.5s;"></i>
+        <i class="fa-solid fa-star star" style="--size: 1.4em; --top: 80%; --left: 45%; --delay: 0.4s;"></i>
+
+        <i class="fa-solid fa-star star special-star special-star-top-small"></i>
+
+        <i class="fa-solid fa-star star special-star special-star-left"></i>
+        <i class="fa-solid fa-star star special-star special-star-right"></i>
+
+        <div class="simple-shooting-star" style="--sx:100vw; --sy:0; --ex:0; --ey:100vh; --spd:8s; --dly:5s;"></div>
+        <div class="simple-shooting-star" style="--sx:0; --sy:20vh; --ex:100vw; --ey:120vh; --spd:10s; --dly:15s;"></div>
+        <div class="simple-shooting-star" style="--sx:80vw; --sy:0; --ex:-20vw; --ey:100vh; --spd:7s; --dly:25s;"></div>
+        <div class="simple-shooting-star" style="--sx:50vw; --sy:0; --ex:50vw; --ey:100vh; --spd:6s; --dly:35s;"></div>
+    </div>
+
+    <div class="contact-container">
+        <h1>شكرًا لزيارتك موقعي المتواضع !</h1>
+        <p>يسعدني تواصلك معي لأي استفسارات أو ملاحظات.</p>
+        <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: <a href="mailto:your_email@example.com">lamajuve21@gmail.com</a></p>
+            <p><i class="fa-solid fa-phone"></i> الهاتف: <a href="tel:+123456789">+966555730576</a></p>
+            <p><i class="fa-brands fa-twitter"></i> تويتر: <a href="https://twitter.com/your_twitter" target="_blank">@lmalwys</a></p>
+            </div>
+        <a href="index.html" class="back-button">
+            العودة للصفحة الرئيسية
+            <i class="fa-solid fa-house"></i>
+        </a>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="assets/space-ambient.mp3" type="audio/mpeg">
+        متصفحك لا يدعم عنصر الصوت.
+    </audio>
+
+    <button id="music-toggle-button" class="music-toggle-button">
+        <i class="fas fa-play"></i>
+    </button>
+    <script src="script.js"></script>
+    <script>
+        // يمكن نسخ جزء منطق تشغيل/إيقاف الموسيقى إذا أردت الموسيقى تعمل في هذه الصفحة أيضاً
+        // تأكد من وجود ملف الصوت assets/space-ambient.mp3
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundMusic = document.getElementById('background-music');
+            const musicToggleButton = document.getElementById('music-toggle-button');
+            const musicIcon = musicToggleButton.querySelector('i');
+
+            backgroundMusic.volume = 0.5; // ضبط مستوى الصوت الافتراضي
+
+            musicToggleButton.addEventListener('click', () => {
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play()
+                        .then(() => {
+                            musicIcon.classList.remove('fa-play');
+                            musicIcon.classList.add('fa-pause');
+                        })
+                        .catch(error => {
+                            console.warn("Autoplay was prevented (or another error):", error);
+                        });
+                } else {
+                    backgroundMusic.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
